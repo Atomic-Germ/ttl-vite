@@ -10,6 +10,12 @@ export default defineConfig({
       registerType: 'autoUpdate',
       devOptions: {
         enabled: true
+      },
+      manifest: {
+        name: 'Time to Leave',
+        short_name: 'TTL',
+        description: 'time clock that tells you when to leave',
+        theme_color: '#ffffff'
       }
     })
   ],

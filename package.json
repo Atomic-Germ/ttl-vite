@@ -20,13 +20,14 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2",
+    "@vite-pwa/assets-generator": "^0.2.6",
     "typescript": "~5.6.2",
     "vite": "^6.0.3",
     "vite-plugin-pwa": "^0.21.1"
   },
   "build": {
-    "beforeDevCommand": "npm run dev",
-    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "pnpm run dev",
+    "beforeBuildCommand": "pnpm run build",
     "devUrl": "https://localhost:5173",
     "frontendDist": "../dist"
   }

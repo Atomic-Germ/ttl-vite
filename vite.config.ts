@@ -1,8 +1,18 @@
 import { defineConfig } from 'vite';
+import { VitePWA } from 'vite-plugin-pwa';
 
 const host: string | boolean = process.env.TAURI_DEV_HOST || false;
 
 export default defineConfig({
+  plugins: [
+    // Allows creating service workers
+    VitePWA({ 
+      registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true
+      }
+    })
+  ],
   clearScreen: false,
   server: {
     strictPort: true,

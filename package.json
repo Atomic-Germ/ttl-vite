@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "description": "",
   "type": "module",
-  "author": {
-    "Thamara Andrade",
+  "author": [
+    "Thamara Andrade et al (Original)",
     "Casey Parker"
-  },
+  ],
   "scripts": {
     "dev": "vite dev",
     "build": "tsc && vite build",
@@ -20,8 +20,9 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2",
+    "typescript": "~5.6.2",
     "vite": "^6.0.3",
-    "typescript": "~5.6.2"
+    "vite-plugin-pwa": "^0.21.1"
   },
   "build": {
     "beforeDevCommand": "npm run dev",

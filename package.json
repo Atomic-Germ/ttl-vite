@@ -1,0 +1,32 @@
+{
+  "name": "time-to-leave",
+  "private": true,
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "author": {
+    "Thamara Andrade",
+    "Casey Parker"
+  },
+  "scripts": {
+    "dev": "vite dev",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-opener": "^2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "vite": "^6.0.3",
+    "typescript": "~5.6.2"
+  },
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "https://localhost:5173",
+    "frontendDist": "../dist"
+  }
+}

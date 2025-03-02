@@ -109,3 +109,6 @@ missing.md
 
 # Mac
 .DS_Store
+
+# Vite
+dev-dist

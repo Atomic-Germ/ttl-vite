@@ -1,16 +1,14 @@
 'use strict';
 
-import { CalendarFactory } from '../renderer/classes/CalendarFactory.js';
-import { applyTheme } from '../renderer/themes.js';
-import { searchLeaveByElement } from '../renderer/notification-channel.js';
+import { CalendarFactory } from '../renderer/classes/CalendarFactory';
+import { applyTheme } from '../renderer/themes';
+import { searchLeaveByElement } from '../renderer/notification-channel';
 
 // Global values for calendar
-let calendar = undefined;
+let calendar: any = undefined;
 
-function setupCalendar(preferences)
-{
-    window.rendererApi.getLanguageDataPromise().then(async languageData =>
-    {
+function setupCalendar(preferences: any): void {
+    window.rendererApi.getLanguageDataPromise().then(async (languageData: any) => {
         calendar = await CalendarFactory.getInstance(preferences, languageData, calendar);
         applyTheme(preferences.theme);
     });
@@ -19,32 +17,28 @@ function setupCalendar(preferences)
 /*
  * Reload the calendar upon request from main
  */
-window.calendarApi.handleCalendarReload(async() =>
-{
+window.calendarApi.handleCalendarReload(async () => {
     await calendar.reload();
 });
 
 /*
  * Update the calendar after a day has passed
  */
-window.calendarApi.handleRefreshOnDayChange((event, oldDate, oldMonth, oldYear) =>
-{
+window.calendarApi.handleRefreshOnDayChange((event: any, oldDate: any, oldMonth: any, oldYear: any) => {
     calendar.refreshOnDayChange(oldDate, oldMonth, oldYear);
 });
 
 /*
- * Get notified when preferences has been updated.
+ * Get notified when preferences have been updated.
  */
-window.calendarApi.handlePreferencesSaved((event, prefs) =>
-{
+window.calendarApi.handlePreferencesSaved((event: any, prefs: any) => {
     setupCalendar(prefs);
 });
 
 /*
  * Get notified when waivers get updated.
  */
-window.calendarApi.handleWaiverSaved(async() =>
-{
+window.calendarApi.handleWaiverSaved(async () => {
     await calendar.loadInternalWaiveStore();
     calendar.redraw();
 });
@@ -52,16 +46,14 @@ window.calendarApi.handleWaiverSaved(async() =>
 /*
  * Punch the date and time as requested by user.
  */
-window.calendarApi.handlePunchDate(() =>
-{
+window.calendarApi.handlePunchDate(() => {
     calendar.punchDate();
 });
 
 /*
  * Reload theme.
  */
-window.calendarApi.handleThemeChange(async(event, theme) =>
-{
+window.calendarApi.handleThemeChange(async (event: any, theme: any) => {
     applyTheme(theme);
 });
 
@@ -71,16 +63,12 @@ window.calendarApi.handleThemeChange(async(event, theme) =>
 window.calendarApi.handleLeaveBy(searchLeaveByElement);
 
 // On page load, create the calendar and setup notification
-$(() =>
-{
+$(() => {
     const preferences = window.rendererApi.getOriginalUserPreferences();
-    requestAnimationFrame(() =>
-    {
+    requestAnimationFrame(() => {
         setupCalendar(preferences);
-        requestAnimationFrame(() =>
-        {
-            setTimeout(() =>
-            {
+        requestAnimationFrame(() => {
+            setTimeout(() => {
                 window.rendererApi.notifyWindowReadyToShow();
             }, 100);
         });

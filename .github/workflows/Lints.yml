@@ -9,8 +9,8 @@ jobs:
   'Checking':
     runs-on: macos-latest
     steps:
+      - name: '        Git Checkout'
       - uses: actions/checkout
-      - uses: actions/setup-node
       - name: '        Install Dependencies'
         shell: bash
         run: |

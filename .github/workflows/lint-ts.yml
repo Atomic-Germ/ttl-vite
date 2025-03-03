@@ -15,21 +15,18 @@ jobs:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 1
           
-      - name: Strict TSLint
-        uses: aaomidi/gh-action-tslint@master
-
-            - name: ESLint Plus
-            uses: bradennapier/eslint-plus-action@v3
-            with:
-              # GitHub repository token for publishing inline lint annotations. Should be secrets.GITHUB_TOKEN.
-              github-token: # default is ${{ github.token }}
-              # When issueSummary is enabled, allows having the bot edit or refresh the comment on each new push
-              issueSummaryMethod: true
-              # Should an issue comment only occur when there are warnings or errors?
-              issueSummaryOnlyOnEvent: true
-              configFile: # optional
-              useEslintrc: # optional
-              useEslintIgnore: # optional
-    # Force run npm ci (or yarn) for you. If you do not use this option, be sure to install the project dependencies before running this action.  By default it will run if a node_modules directory is not found or this is set to true
-    npmInstall: # optional, default is false
+      - name: ESLint Plus
+        uses: bradennapier/eslint-plus-action@v3
+        with:
+            # GitHub repository token for publishing inline lint annotations. Should be secrets.GITHUB_TOKEN.
+            github-token: # default is ${{ github.token }}
+            # When issueSummary is enabled, allows having the bot edit or refresh the comment on each new push
+            issueSummaryMethod: true
+            # Should an issue comment only occur when there are warnings or errors?
+            issueSummaryOnlyOnEvent: true
+            configFile: # optional
+            useEslintrc: # optional
+            useEslintIgnore: # optional
+            # Force run npm ci (or yarn) for you. If you do not use this option, be sure to install the project dependencies before running this action.  By default it will run if a node_modules directory is not found or this is set to true
+            npmInstall: # optional, default is false
           

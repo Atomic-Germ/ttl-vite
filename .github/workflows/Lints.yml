@@ -9,12 +9,11 @@ jobs:
   'Checking':
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v4.2.0
+      - uses: actions/checkout
+      - uses: actions/setup-node
       - name: '        Install Dependencies'
         shell: bash
         run: |
-          brew install pnpm
           pnpm install
       - name: '        Lint CSS'
         shell: bash

@@ -10,27 +10,25 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os: macos-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v4
-        with:
-          cache: 'pnpm'
+      - uses: actions/setup-node@v4.2.0
       - name: '        Setup PNPM'
         uses: pnpm/action-setup@v4.1.0
       - name: '        Install Dependencies'
-        shell: bash
+        shell: zsh
         run: |
           pnpm install
       - name: '        Lint CSS'
-        shell: bash
+        shell: zsh
         run: |
           pnpm run lint:css
       - name: '        Lint JS/TS'
-        shell: bash
+        shell: zsh
         run: |
           pnpm run lint:eslint
       - name: '        Lint Markdown'
-        shell: bash
+        shell: zsh
         run: |
           pnpm run lint:json

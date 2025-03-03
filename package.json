@@ -9,8 +9,17 @@
     "Casey Parker"
   ],
   "scripts": {
+    "lint": "pnpm eslint **/*.ts",
+    "lint:css": "stylelint css/*.css --config configs/.stylelintrc.json --ignore-path configs/.stylelintignore",
+    "lint:eslint": "eslint . --config configs/eslint.config.mjs",
+    "lint:markdown": "prettier -c docs/*.md docs/translated_readmes/*.md *.md --config configs/.prettierrc.json --ignore-path .gitignore --ignore-path configs/.prettierignore",
+    "lint:json": "prettier -c locales/*/*.json --config configs/.prettierrc.json --ignore-path .gitignore --ignore-path configs/.prettierignore",
+    "lint-fix": "npm-run-all --parallel lint-fix:*",
+    "lint-fix:css": "npm run lint:css -- --fix",
+    "lint-fix:eslint": "npm run lint:eslint -- --fix",
+    "lint-fix:json": "npm run lint:json -- --write",
+    "lint-fix:markdown": "npm run lint:markdown -- --write",
     "dev": "vite dev",
-    "lint": "pnpm eslint .",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri"
@@ -24,6 +33,9 @@
     "@tauri-apps/cli": "^2",
     "@vite-pwa/assets-generator": "^0.2.6",
     "eslint": "^9.21.0",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.15.0",
+    "stylelint-config-standard": "^37.0.0",
     "typescript": "~5.6.3",
     "typescript-eslint": "^8.26.0",
     "vite": "^6.0.3",

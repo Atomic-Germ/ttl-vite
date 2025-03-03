@@ -17,7 +17,7 @@
   font-family: Montserrat, Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
-  font-weight: 1 999;
+  font-weight: 300;
   color: #0f0f0f;
   background-color: #f6f6f6;
   font-synthesis: none;
@@ -78,6 +78,7 @@ button {
   background-color: #fff;
   transition: border-color 0.25s;
   box-shadow: 0 0.125rem 0.125rem rgb(0 0 0 / 20%);
+  outline: none;
 }
 
 button {
@@ -91,11 +92,6 @@ button:hover {
 button:active {
   border-color: #396cd8;
   background-color: #e8e8e8;
-}
-
-input,
-button {
-  outline: none;
 }
 
 #greet-input {

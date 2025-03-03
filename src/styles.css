@@ -1,3 +1,10 @@
+/* Font from https://fonts.google.com/specimen/Montserrat */
+@font-face {
+  font-family: Montserrat;
+  src: url('fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format("truetype-variations");
+  font-weight: 1 999;
+}
+
 .logo.vite:hover {
   filter: drop-shadow(0 0 2em #747bff);
 }
@@ -6,10 +13,10 @@
   filter: drop-shadow(0 0 2em #2d79c7);
 }
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat, Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 1 999;
 
   color: #0f0f0f;
   background-color: #f6f6f6;

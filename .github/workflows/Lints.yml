@@ -18,8 +18,6 @@ jobs:
           cache: 'pnpm'
       - name: '        Setup PNPM'
         uses: pnpm/action-setup@v4.1.0
-        with:
-
       - name: '        Install Dependencies'
         shell: bash
         run: |

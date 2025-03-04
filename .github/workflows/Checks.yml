@@ -28,3 +28,7 @@ jobs:
         shell: bash
         run: |
           pnpm run lint:css
+      - name: '        Lint Markdown'
+        shell: bash
+        run: |
+          pnpm run lint:markdown

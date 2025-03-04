@@ -1,18 +1,14 @@
-name: PR Checks
+name: PR Lints
 on:
   push:
     branches:
-      - main
+      - dev/*
   pull_request:
     branches:
       - main
-      - dev/*
 jobs:
-  'Checking':
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: ubuntu-latest
+  'Linting':
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v4

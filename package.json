@@ -44,5 +44,9 @@
     "beforeBuildCommand": "pnpm run build",
     "devUrl": "https://localhost:5173",
     "frontendDist": "../dist"
+  },
+  "engines": {
+    "node": ">=23",
+    "pnpm": ">=10"
   }
 }

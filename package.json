@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "lint:css": "stylelint src/*.css --config configs/.stylelintrc.json --ignore-path configs/.stylelintignore",
-    "lint:eslint": "eslint .",
+    "lint:eslint": "eslint . --ignore-pattern 'configs/*'",
     "lint:markdown": "prettier -c docs/*.md docs/translated_readmes/*.md *.md --config configs/.prettierrc.json --ignore-path .gitignore --ignore-path configs/.prettierignore",
     "lint:json": "prettier -c locales/*/*.json --config configs/.prettierrc.json --ignore-path .gitignore --ignore-path configs/.prettierignore",
     "lint-fix:css": "pnpm run lint:css -- --fix",
@@ -44,5 +44,9 @@
     "beforeBuildCommand": "pnpm run build",
     "devUrl": "https://localhost:5173",
     "frontendDist": "../dist"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
   }
 }

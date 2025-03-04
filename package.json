@@ -17,7 +17,7 @@
     "lint-fix:eslint": "pnpm run lint:eslint -- --fix",
     "lint-fix:json": "pnpm run lint:json -- --write",
     "lint-fix:markdown": "pnpm run lint:markdown -- --write",
-    "dev": "vite dev",
+    "dev": "rm dev-dist/** && vite dev && rm dev-dist/**",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri"

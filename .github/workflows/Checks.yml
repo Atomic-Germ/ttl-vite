@@ -1,0 +1,47 @@
+name: PR Checks
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      - dev/*
+jobs:
+  'Checking':
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+      - uses: pnpm/action-setup@v4.1.0
+      - name: '        Install Dependencies'
+        shell: bash
+        run: |
+          pnpm install
+      - name: '        ESLint'
+        shell: bash
+        run: |
+          pnpm run lint:eslint
+      - name: '        Lint JSON'
+        shell: bash
+        run: |
+          pnpm run lint:json
+      - name: '        Lint CSS'
+        shell: bash
+        run: |
+          pnpm run lint:css
+      - name: '        Lint Markdown'
+        shell: bash
+        run: |
+          pnpm run lint:markdown
+          #- name: '        Tests'
+          #shell: bash
+          #env:
+          #OS: ${{ matrix.os }}
+          #run: |
+          #pnpm run lint

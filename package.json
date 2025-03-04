@@ -46,7 +46,7 @@
     "frontendDist": "../dist"
   },
   "engines": {
-    "node": ">=23",
+    "node": ">=20",
     "pnpm": ">=10"
   }
 }

@@ -5,14 +5,6 @@
   font-weight: 1 999;
 }
 
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2rem #747bff);
-}
-
-.logo.typescript:hover {
-  filter: drop-shadow(0 0 2rem #2d79c7);
-}
-
 :root {
   font-family: Montserrat, Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 1rem;
@@ -40,6 +32,7 @@
 }
 
 .row {
+  border-top: 1px solid white;
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
@@ -48,76 +41,66 @@
   height: 3rem;
 }
 
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 1rem;
+  height: 3rem;
+}
+
 .title {
   font-weight: 300;
   align-items: center;
   vertical-align: middle;
-  margin-top: .7rem;
+  margin-top: 1.0rem;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
-
-h1 {
+#footer {
+  bottom: 0;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  height: 3rem;
+  left: 0;
+  line-height: 3rem;
+  position: fixed;
+  right: 0;
   text-align: center;
 }
 
-input,
-button {
-  border-radius: 0.5rem;
-  border: 1px solid transparent;
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0f0f0f;
-  background-color: #fff;
-  transition: border-color 0.25s;
-  box-shadow: 0 0.125rem 0.125rem rgb(0 0 0 / 20%);
-  outline: none;
-}
-
-button {
+#punch-button {
+  align-items: flex-start;
+  appearance: button;
+  background-color: rgb(164, 158, 207);
+  box-sizing: border-box;
   cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 400;
+  height: 3rem;
+  line-height: 3rem;
+  transition-duration: 0.3s;
+  transition-property: filter;
+  transition-timing-function: ease;
+  width: calc(100vw - 3rem);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border: 0;
 }
 
-button:hover {
-  border-color: #396cd8;
-}
-
-button:active {
-  border-color: #396cd8;
-  background-color: #e8e8e8;
-}
-
-#greet-input {
-  margin-right: 0.3125rem;
+#punch-button > img {
+    -webkit-user-drag: none;
+    width: 2.3rem;
+    height: 2.3rem;
+    padding-bottom: 0.5rem;
+    vertical-align: middle;
+    box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
-  }
-
-  a:hover {
-    color: #24c8db;
-  }
-
-  input,
-  button {
-    color: #fff;
-    background-color: #0f0f0f98;
-  }
-
-  button:active {
-    background-color: #0f0f0f69;
-  }
 }

@@ -17,7 +17,7 @@
 
   <body>
     <main class="container">
-      <div class="row">
+      <div class="title-row">
         <h1 class="title">Time to Leave</h1>
           <img
             src="/src/assets/ttl.svg"
@@ -25,13 +25,16 @@
             alt="Time to Leave logo"
           />
       </div>
+      <div class="month-row"></div>
+      <div class="row">
       <p>Click on the Time to Leave logo to learn more about the framework</p>
-
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
-      </form>
-      <p id="greet-msg"></p>
+      </div>
     </main>
+    <div id="footer" class="footer">
+      <button class="punch-button" id="punch-button">
+        <img src="src/assets/fingerprint.svg" />
+        <label for="punch-button" id="punch-button-label">Punch Time</label>
+      </button>
+    </div>
   </body>
 </html>

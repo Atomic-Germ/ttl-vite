@@ -1,19 +1,19 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "ttl-tauri",
+  "productName": "Time to Leave",
   "version": "0.1.0",
   "identifier": "com.ttl-tauri.app",
   "build": {
     "beforeDevCommand": "pnpm dev",
-    "devUrl": "http://localhost:1420",
     "beforeBuildCommand": "pnpm build",
+    "devUrl": "http://localhost:5173",
     "frontendDist": "../dist"
   },
   "app": {
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "ttl-tauri",
+        "title": "Time to Leave",
         "width": 800,
         "height": 600
       }

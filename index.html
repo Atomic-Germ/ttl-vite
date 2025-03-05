@@ -17,24 +17,45 @@
 
   <body>
     <main class="container">
-      <h1>Time to Leave</h1>
-
-      <div class="row">
-        <a href="https://tauri.app" target="_blank">
+      <div class="title-row">
+        <h1 class="title">Time to Leave</h1>
           <img
             src="/src/assets/ttl.svg"
             class="logo tauri"
             alt="Time to Leave logo"
           />
-        </a>
       </div>
+      <div class="month-row"></div>
+      <div class="row">
       <p>Click on the Time to Leave logo to learn more about the framework</p>
-
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
-      </form>
-      <p id="greet-msg"></p>
+      </div>
+      <table class="table-header">
+        <tbody>
+          <tr>
+            <th class="th but-switch-view" colspan="2">
+              <input id="switch-view" type="image" src="src/assets/switch.svg" alt="Switch View" title="Switch View" height="24" width="24">
+            </th>
+            <th class="th but-left">
+              <input id="prev-month" type="image" src="src/assets/left-arrow.svg" alt="Previous Month" title="Previous Month" height="24" width="24">
+            </th>
+            <th class="th th-month-name" colspan="18">
+              <div class="div-th-month-name" id="month-year">March 2025</div>
+            </th>
+            <th class="th but-right">
+              <input id="next-month" type="image" src="src/assets/right-arrow.svg" alt="Next Month" title="Next Month" height="24" width="24">
+            </th>
+            <th class="th but-today">
+              <input id="current-month" type="image" src="src/assets/calendar.svg" alt="Go to Current Month" title="Go to Current Month" height="24" width="24">
+            </th>
+          </tr>
+        </tbody>
+      </table>
     </main>
+    <div id="footer" class="footer">
+      <button class="punch-button" id="punch-button">
+        <img src="src/assets/fingerprint.svg" />
+        <label for="punch-button" id="punch-button-label">Punch Time</label>
+      </button>
+    </div>
   </body>
 </html>

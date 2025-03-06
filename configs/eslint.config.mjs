@@ -18,6 +18,8 @@ export default [{
     ],
 
     ignores: [
+        'build/',
+        'dev-build/',
         '**/assets/',
         '**/coverage/',
         '**/node_modules/',

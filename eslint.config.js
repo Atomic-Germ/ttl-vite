@@ -2,13 +2,13 @@
 export default [
     {
         ignores: [
-            "configs/",
-            "build/",
-            "dev-build/",
-            "assets/",
-            "node_modules/",
-            "!src/",
-            "!src/tauri"
+            'configs/',
+            'build/',
+            'dev-build/',
+            'assets/',
+            'node_modules/',
+            '!src/',
+            '!src/tauri'
         ]
     }
 ];

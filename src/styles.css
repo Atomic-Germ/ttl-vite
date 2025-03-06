@@ -99,10 +99,7 @@ input[type="image"] {
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  padding-bottom: 1rem;
-  height: 3rem;
+  height: 4rem;
 }
 
 .table-header {
@@ -125,11 +122,38 @@ input[type="image"] {
   border-bottom: 3px solid rgb(128 128 128);
 }
 
+
 .title {
   font-weight: 300;
   align-items: center;
   vertical-align: middle;
   margin-top: 1.0rem;
+}
+
+#calendar > div.title-header {
+  display: flex;
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+}
+
+.title-header > div.title-header-text {
+  position: absolute;
+  left: 1ch;
+  line-height: 4rem;
+  font-size: 2rem;
+  -webkit-user-drag: none;
+}
+
+.title-header > div.title-header-img {
+  position: absolute;
+  top: 2ch;
+  right: 2ch;
+}
+
+.title-header > div.title-header-img > img {
+  width: 4rem;
+  height: 4rem;
+  -webkit-user-drag: none;
 }
 
 #footer {
@@ -180,3 +204,5 @@ input[type="image"] {
   vertical-align: middle;
   box-sizing: border-box;
 }
+
+

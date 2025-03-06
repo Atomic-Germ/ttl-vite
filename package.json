@@ -9,16 +9,16 @@
     "Casey Parker"
   ],
   "scripts": {
-    "lint": "pnpm lint:css && pnpm lint:eslint && pnpm lint:markdown && pnpm lint:json",
+    "lint": "rm -rf build/* dev-build/* && pnpm lint:css && pnpm lint:eslint && pnpm lint:markdown && pnpm lint:json",
     "lint:css": "stylelint src/*.css --config configs/.stylelintrc.json --ignore-path configs/.stylelintignore",
     "lint:eslint": "eslint . --config configs/eslint.config.mjs",
     "lint:markdown": "prettier -c docs/*.md docs/translated_readmes/*.md *.md --config configs/.prettierrc.json --ignore-path .gitignore --ignore-path configs/.prettierignore",
     "lint:json": "prettier -c locales/*/*.json --config configs/.prettierrc.json --ignore-path .gitignore --ignore-path configs/.prettierignore",
     "lint-fix": "pnpm lint-fix:css && pnpm lint-fix:eslint && pnpm lint-fix:markdown && pnpm lint-fix:json",
-    "lint-fix:css": "pnpm run lint:css --fix",
-    "lint-fix:eslint": "pnpm run lint:eslint --fix",
-    "lint-fix:json": "pnpm run lint:json --write",
-    "lint-fix:markdown": "pnpm run lint:markdown --write",
+    "lint-fix:css": "pnpm lint:css --fix",
+    "lint-fix:eslint": "pnpm lint:eslint --fix",
+    "lint-fix:json": "pnpm lint:json --write",
+    "lint-fix:markdown": "pnpm lint:markdown --write",
     "dev": "vite dev && rm dev-dist/**",
     "build": "tsc && vite build",
     "preview": "vite preview",
@@ -49,13 +49,19 @@
     "vite-plugin-pwa": "^0.21.1"
   },
   "build": {
-    "beforeDevCommand": "pnpm run dev",
-    "beforeBuildCommand": "pnpm run build",
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
     "devUrl": "https://localhost:5173",
     "frontendDist": "../dist"
   },
   "engines": {
     "node": ">=20",
     "pnpm": ">=10"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }

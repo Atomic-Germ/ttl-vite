@@ -18,15 +18,11 @@ export default [{
     ],
 
     ignores: [
-        'build/',
-        'dev-build/',
-        '**/assets/',
-        '**/coverage/',
-        '**/node_modules/',
-        '**/*.svg',
-        '**/*.html',
-        '**/*.css',
-        '**/release-builds',
+        'dist/',
+        'dev-dist/',
+        'src/assets/',
+        'node_modules/',
+        'src/assets/*.svg',
     ],
 }, ...compat.extends('eslint:recommended'), {
     languageOptions: {

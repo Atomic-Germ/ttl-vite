@@ -16,38 +16,12 @@
   </head>
 
   <body>
-    <main class="container">
-      <div class="title-row">
-        <h1 class="title">Time to Leave</h1>
-          <img
-            src="/src/assets/ttl.svg"
-            class="logo tauri"
-            alt="Time to Leave logo"
-          />
+  <div id="calendar" class="container">
+      <div class="title-header">
+        <div class="title-header-text">Time to Leave</div>
+        <div class="title-header-img"><img name="title-border-img" src="src/assets/ttl.svg" ></div>
       </div>
-      <div class="month-row"></div>
-      <table class="table-header">
-        <tbody>
-          <tr>
-            <th class="th but-switch-view" colspan="2">
-              <input id="switch-view" type="image" src="src/assets/switch.svg" alt="Switch View" title="Switch View" height="24" width="24">
-            </th>
-            <th class="th but-left">
-              <input id="prev-month" type="image" src="src/assets/left-arrow.svg" alt="Previous Month" title="Previous Month" height="24" width="24">
-            </th>
-            <th class="th th-month-name" colspan="18">
-              <div class="div-th-month-name" id="month-year">March 2025</div>
-            </th>
-            <th class="th but-right">
-              <input id="next-month" type="image" src="src/assets/right-arrow.svg" alt="Next Month" title="Next Month" height="24" width="24">
-            </th>
-            <th class="th but-today">
-              <input id="current-month" type="image" src="src/assets/calendar.svg" alt="Go to Current Month" title="Go to Current Month" height="24" width="24">
-            </th>
-          </tr>
-        </tbody>
-      </table>
-    </main>
+
     <div id="footer" class="footer">
       <button class="punch-button" id="punch-button">
         <img src="src/assets/fingerprint.svg" />
